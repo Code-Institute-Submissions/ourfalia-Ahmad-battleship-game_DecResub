@@ -74,4 +74,19 @@ def new_game():
         else:
             print("-" * 14)
             print("You missed, try again! \n")
-            guesses.board[x][y] = "-"      
+            guesses.board[x][y] = "-"
+         # check for the final score 
+        if ships.score(guesses) == 5:
+            print("-" * 14)
+            print("Congratulations, You hit all the battleships! \n")
+            break
+        else:
+            turns -= 1
+            print(f"Only {turns} tries left \n")
+            if turns == 0:
+                print("Sorry, game is over! \n")
+                Board.print(guesses)
+                break
+
+
+new_game()        
