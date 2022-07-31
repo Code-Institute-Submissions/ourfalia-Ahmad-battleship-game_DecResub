@@ -41,3 +41,10 @@ class ships:
         except ValueError and KeyError:
             print("Not a valid input")
             return self.make_guess()
+    def score(self):
+        score = 0
+        for row in self.board:
+            for column in row:
+                if column == "X":
+                    score += 1
+        return score        
