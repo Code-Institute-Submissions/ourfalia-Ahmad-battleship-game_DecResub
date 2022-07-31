@@ -29,6 +29,7 @@ class ships:
                 self.x, self.y = random.randint(0, 5), random.randint(0, 5)
             self.board[self.x][self.y] = "X"
         return self.board
+
     def make_guess(self):
         try:
             x = input("Please pick a row number: ")
@@ -44,6 +45,7 @@ class ships:
         except ValueError and KeyError:
             print("Not a valid input")
             return self.make_guess()
+
     def score(self):
         score = 0
         for row in self.board:
@@ -51,6 +53,8 @@ class ships:
                 if column == "X":
                     score += 1
         return score
+
+
 def new_game():
     computer = Board([["."] * 6 for i in range(6)])
     guesses = Board([["."] * 6 for i in range(6)])
@@ -75,8 +79,8 @@ def new_game():
             print("-" * 14)
             print("You missed, try again! \n")
             guesses.board[x][y] = "-"
-         # check for the final score 
-        if ships.score(guesses) == 5:
+        # check for the final score 
+        if ships.score(guesses) == 3:
             print("-" * 14)
             print("Congratulations, You hit all the battleships! \n")
             break
@@ -89,4 +93,4 @@ def new_game():
                 break
 
 
-new_game()        
+new_game()
