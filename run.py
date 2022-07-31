@@ -32,15 +32,15 @@ class ships:
 
     def make_guess(self):
         try:
-            x = input("Please pick a row number: ")
+            x = input("Please pick a row number:\n")
             while x not in '123456':
                 print("Invalid, please select a number between 1 - 6 \n")
-                x = input("Please pick a row number: ")
+                x = input("Please pick a row number:\n")
 
-            y = input("Please pick a column letter: ").upper()
+            y = input("Please pick a column letter:\n").upper()
             while y not in "ABCDEF":
                 print("Invalid, please select a letter from A-F \n")
-                y = input("Please pick a column letter: ").upper()
+                y = input("Please pick a column letter:\n").upper()
             return int(x) - 1, Board.convert_letters()[y]
         except ValueError and KeyError:
             print("Not a valid input")
