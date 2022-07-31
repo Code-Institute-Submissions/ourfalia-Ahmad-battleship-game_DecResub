@@ -13,3 +13,18 @@ class Board:
             print(rows, " ".join(row))
             rows += 1
         print("-" * 14)
+
+
+class ships:
+    def __init__(self, board):
+        self.board = board
+
+    def add_ships(self):
+        for i in range(3):
+            self.x, self.y = random.randint(0, 5), random.randint(0, 5)
+            while self.board[self.x][self.y] == "X":
+                self.x, self.y = random.randint(0, 5), random.randint(0, 5)
+            self.board[self.x][self.y] = "X"
+        return self.board
+
+    
