@@ -56,4 +56,22 @@ def new_game():
     guesses = Board([["."] * 6 for i in range(6)])
     ships.add_ships(computer)
     # set 18 attempts
-    turns = 18        
+    turns = 18
+    while turns > 0:
+        Board.print(guesses)
+        # get the player's input
+        x, y = ships.make_guess(object)
+        # check if there is any duplication
+        while guesses.board[x][y] != ".":
+            print("-" * 14)
+            print("You already picked that one! \n")
+            x, y = ships.make_guess(object)
+        # check if the player scores or misses 
+        if computer.board[x][y] == "X":
+            print("-" * 14)
+            print("Well done, you hit a battleship! \n")
+            guesses.board[x][y] = "X"
+        else:
+            print("-" * 14)
+            print("You missed, try again! \n")
+            guesses.board[x][y] = "-"      
