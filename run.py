@@ -26,5 +26,18 @@ class ships:
                 self.x, self.y = random.randint(0, 5), random.randint(0, 5)
             self.board[self.x][self.y] = "X"
         return self.board
+    def make_guess(self):
+        try:
+            x = input("Please pick a row number: ")
+            while x not in '123456':
+                print("Invalid, please select a number between 1 - 6 \n")
+                x = input("Please pick a row number: ")
 
-    
+            y = input("Please pick a column letter: ").upper()
+            while y not in "ABCDEF":
+                print("Invalid, please select a letter from A-F \n")
+                y = input("Please pick a column letter: ").upper()
+            return int(x) - 1, Board.convert_letters()[y]
+        except ValueError and KeyError:
+            print("Not a valid input")
+            return self.make_guess()
