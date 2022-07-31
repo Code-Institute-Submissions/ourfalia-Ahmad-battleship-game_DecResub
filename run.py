@@ -1,3 +1,6 @@
+import random
+
+
 class Board:
     def __init__(self, board):
         self.board = board
@@ -47,4 +50,10 @@ class ships:
             for column in row:
                 if column == "X":
                     score += 1
-        return score        
+        return score
+def new_game():
+    computer = Board([["."] * 6 for i in range(6)])
+    guesses = Board([["."] * 6 for i in range(6)])
+    ships.add_ships(computer)
+    # set 18 attempts
+    turns = 18        
