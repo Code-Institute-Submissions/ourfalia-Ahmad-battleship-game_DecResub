@@ -1,6 +1,8 @@
 # ahmad-battleship is a python terminal game, which runs on Heroku
 ahmad-battleship is a simple version of the traditional battleship game. Users can try to beat the computer by finding all of the computer's battleships (which are set to three) throgh 18 attempts. Each battleship occupies one square on the board. 
 [Here is the live version of my project.](https://ahmad-battleship.herokuapp.com/)
+<br>
+<br>
 ![](image/look.jpg) 
 # How to play 
 This game is based on the classic pen-paper game. In this version, the board is randomly generated and the player cannot see where the ships are located.
@@ -34,20 +36,20 @@ The classes also have methods to help play the game, such as a print method to p
 3. paint 
 4. Heroku
 # Testing
-I have maually tested this project by doing the following 
+I have maually tested this project by doing the following: 
 <br> 
 <br>
 ![](image/checker.jpg)
 <br>
 <br>
-- I passed the code through a code validator and it looked good. 
+- Passing the code through an online code validator (https://www.pythonchecker.com/) and it looked good as shown in the image above. 
 <br>
 <br>
 ![](image/errorhandling.jpg)
 <br>
 <br>
 - Giving invalid input. This includes a number outside the specified scope, empty input or when the input is not a number.
-- Tested in my local terminal and in Heroku terminal
+- Testing the game in my local terminal and in Heroku terminal
 # Bugs & Improvement
 When I wrote the project, I had some indentation errors and extra spaces which I fixed.
 Validator testing pep8: no errors were found. 
