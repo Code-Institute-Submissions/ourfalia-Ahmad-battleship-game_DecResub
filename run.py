@@ -5,12 +5,13 @@ class Board:
     def __init__(self, board):
         self.board = board
 
-    def convert_letters():
-        convert_to_num = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5}
-        return convert_to_num
+    # def convert_letters():
+    #     convert_to_num = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5}
+    #     return convert_to_num
 
     def print(self):
-        print("  A B C D E F")
+        #print("  A B C D E F")
+        print("  1 2 3 4 5 6") 
         rows = 1
         for row in self.board:
             print(rows, " ".join(row))
@@ -31,20 +32,17 @@ class ships:
         return self.board
 
     def make_guess(self):
-        try:
-            x = input("Please pick a row number:\n")
-            while x not in '123456':
-                print("Invalid, please select a number between 1 - 6 \n")
-                x = input("Please pick a row number:\n")
+        while True:
+            try:
+                x = int(input("Please pick a row number:\n"))
+                y = int(input("Please pick a row number:\n"))
+                while not 0 < x < 7 or not 0 < y < 7:
+                    raise ValueError()
+            except ValueError:
+                print("Please enter a number between 1 and 6")
+            else:  
+                return int(x) -1, int(y) -1
 
-            y = input("Please pick a column letter:\n").upper()
-            while y not in "ABCDEF":
-                print("Invalid, please select a letter from A-F \n")
-                y = input("Please pick a column letter:\n").upper()
-            return int(x) - 1, Board.convert_letters()[y]
-        except ValueError and KeyError:
-            print("Not a valid input")
-            return self.make_guess()
 
     def score(self):
         score = 0
