@@ -11,11 +11,19 @@ Attempted guesses are marked on the board with a - . Hits are indicated by x . T
 - play against the computer 
 - Accept user input
 - Maintain score 
+<br>
+<br>
 ![](image/hit.jpg)
+<br>
+<br>
 - Input validation and error checking 
 - You must enter numbers 
 - You cannot enter the same guss twice 
+<br>
+<br>
 ![](image/validation.jpg)
+<br>
+<br>
 # Data model
 I decided to use a board class and a ship class as my model. The game creates the board using the board class. 
 The ship class stores the number of ships, the position of the ships, the guesses against the board.
@@ -27,8 +35,17 @@ The classes also have methods to help play the game, such as a print method to p
 4. Heroku
 # Testing
 I have maually tested this project by doing the following 
-- Passed the code through a pep8 linter and confirmed ther are no problems 
+<br> 
+<br>
+![](image/checker.jpg)
+<br>
+<br>
+- I passed the code through a code validator and it looked good. 
+<br>
+<br>
 ![](image/errorhandling.jpg)
+<br>
+<br>
 - Giving invalid input. This includes a number outside the specified scope, empty input or when the input is not a number.
 - Tested in my local terminal and in Heroku terminal
 # Bugs & Improvement
