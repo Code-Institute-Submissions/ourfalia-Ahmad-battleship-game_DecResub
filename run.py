@@ -5,13 +5,8 @@ class Board:
     def __init__(self, board):
         self.board = board
 
-    # def convert_letters():
-    #     convert_to_num = {"A": 0, "B": 1, "C": 2, "D": 3, "E": 4, "F": 5}
-    #     return convert_to_num
-
     def print(self):
-        #print("  A B C D E F")
-        print("  1 2 3 4 5 6") 
+        print("  1 2 3 4 5 6")
         rows = 1
         for row in self.board:
             print(rows, " ".join(row))
@@ -20,8 +15,10 @@ class Board:
 
 
 class ships:
-    def __init__(self, board):
+    def __init__(self, board, x, y):
         self.board = board
+        self.x = x
+        self.y = y
 
     def add_ships(self):
         for i in range(3):
@@ -42,9 +39,8 @@ class ships:
                     raise ValueError()
             except ValueError:
                 print("Please enter a number between 1 and 6")
-            else:  
-                return int(x) -1, int(y) -1
-
+            else:
+                return int(x) - 1, int(y) - 1
 
     def score(self):
         score = 0
@@ -70,7 +66,7 @@ def new_game():
             print("-" * 14)
             print("You already picked that one! \n")
             x, y = ships.make_guess(object)
-        # check if the player scores or misses 
+        # check if the player scores or misses
         if computer.board[x][y] == "X":
             print("-" * 14)
             print("Well done, you hit a battleship! \n")
@@ -79,7 +75,7 @@ def new_game():
             print("-" * 14)
             print("You missed, try again! \n")
             guesses.board[x][y] = "-"
-        # check for the final score 
+        # check for the final score
         if ships.score(guesses) == 3:
             print("-" * 14)
             print("Congratulations, You hit all the battleships! \n")
