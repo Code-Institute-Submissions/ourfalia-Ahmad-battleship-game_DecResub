@@ -35,8 +35,10 @@ class ships:
         while True:
             try:
                 x = int(input("Please pick a row number:\n"))
-                y = int(input("Please pick a row number:\n"))
-                while not 0 < x < 7 or not 0 < y < 7:
+                while not 0 < x < 7:
+                    raise ValueError()
+                y = int(input("Please pick a column number:\n"))
+                while not 0 < y < 7:
                     raise ValueError()
             except ValueError:
                 print("Please enter a number between 1 and 6")
